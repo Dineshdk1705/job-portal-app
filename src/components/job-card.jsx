@@ -23,6 +23,12 @@ const JobCard = ({
 }) => {
   const [saved, setSaved] = useState(savedInit);
 
+  useEffect(() => {
+    if (saved !== savedInit) {
+      setSaved(savedInit);
+    }
+  }, [savedInit, saved]);
+
   const { user } = useUser();
 
   const {
